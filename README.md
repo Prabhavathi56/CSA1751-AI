@@ -4,3 +4,28 @@ Initialize OPEN ← {start}, CLOSED ← ∅, g(start) ← 0, parent(start) ← N
    If n is goal, reconstruct path using parent and return path
    Move n from OPEN to CLOSED and expand its neighbors
    Update g(neighbor) and parent if a lower-cost path is found; add to OPEN
+   
+Algorithm AlphaBeta(depth, nodeIndex, maximizingPlayer, values, alpha, beta)
+
+ If depth = maximum depth:
+       return values[nodeIndex]
+
+ If maximizingPlayer = TRUE:
+       best ← −∞
+       for each child of node:
+           value ← AlphaBeta(next depth, child, FALSE, values, alpha, beta)
+           best ← max(best, value)
+           alpha ← max(alpha, best)
+           if beta ≤ alpha:
+               break   // Beta pruning
+       return best
+
+ Else (minimizingPlayer):
+       best ← +∞
+       for each child of node:
+           value ← AlphaBeta(next depth, child, TRUE, values, alpha, beta)
+           best ← min(best, value)
+           beta ← min(beta, best)
+           if beta ≤ alpha:
+               break   // Alpha pruning
+       return best
