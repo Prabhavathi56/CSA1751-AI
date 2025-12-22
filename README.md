@@ -173,6 +173,20 @@ While PQ is not empty do
 
 Return None
 
+Algorithm SolveSENDMONEY()
+
+For S from 1 to 9 do
+    For E, N, D, M, O, R, Y from 0 to 9 do
+        If all letters S, E, N, D, M, O, R, Y are unique then
+            SEND  ← S*1000 + E*100 + N*10 + D
+            MORE  ← M*1000 + O*100 + R*10 + E
+            MONEY ← M*10000 + O*1000 + N*100 + E*10 + Y
+            If SEND + MORE = MONEY then
+                Print solution (S, E, N, D, M, O, R, Y, SEND, MORE, MONEY)
+                Return
+Print "No solution found"
+
+
 
 
 
