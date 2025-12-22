@@ -138,6 +138,25 @@ Else if outlook = "Overcast" then
 Else if outlook = "Rain" then
     Return "Yes"
 
+Algorithm UCS(graph, start, goal)
+
+Initialize VISITED as empty set
+Initialize priority queue PQ and push (0, start, [start])  // (cost, node, path)
+
+While PQ is not empty do
+    Pop (cost, node, path) with lowest cost from PQ
+    If node is in VISITED then
+        Continue
+    Add node to VISITED
+    If node = goal then
+        Return path, cost
+    For each neighbor, weight of node do
+        If neighbor not in VISITED then
+            Push (cost + weight, neighbor, path + [neighbor]) into PQ
+
+Return None, ∞
+
+
 
 
 
