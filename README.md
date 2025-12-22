@@ -29,3 +29,18 @@ Algorithm AlphaBeta(depth, nodeIndex, maximizingPlayer, values, alpha, beta)
            if beta ≤ alpha:
                break   // Alpha pruning
        return best
+
+ Algorithm BFS(graph, start)
+
+Create an empty set VISITED  
+Create a queue QUEUE and enqueue start node  
+Add start node to VISITED  
+
+While QUEUE is not empty do  
+    Dequeue a node and print it  
+    For each adjacent node of the dequeued node do  
+        If the node is not in VISITED then  
+            Add the node to VISITED  
+            Enqueue the node into QUEUE  
+End While
+
