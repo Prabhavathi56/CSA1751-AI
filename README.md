@@ -44,3 +44,16 @@ While QUEUE is not empty do
             Enqueue the node into QUEUE  
 End While
 
+Algorithm DFS(graph, start, visited)
+
+If VISITED is empty then  
+    Create an empty set VISITED  
+
+Add start node to VISITED  
+Print start node  
+
+For each adjacent node of start do  
+    If node is not in VISITED then  
+        Call DFS(graph, node, VISITED)
+
+
