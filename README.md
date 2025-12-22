@@ -56,4 +56,18 @@ For each adjacent node of start do
     If node is not in VISITED then  
         Call DFS(graph, node, VISITED)
 
+Algorithm FeedForwardNN(X, W1, b1, W2, b2)
+
+Sigmoid(x):
+    return 1 / (1 + e^(−x))
+
+hidden_input  ← X × W1 + b1
+hidden_output ← Sigmoid(hidden_input)
+
+final_input   ← hidden_output × W2 + b2
+final_output  ← Sigmoid(final_input)
+
+return final_output
+
+
 
