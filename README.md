@@ -124,6 +124,21 @@ Else:
     ShowBoard()
     Print "Draw!"
 
+Algorithm DecisionTree(outlook, humidity)
+
+If outlook = "Sunny" then
+    If humidity = "High" then
+        Return "No"
+    Else
+        Return "Yes"
+
+Else if outlook = "Overcast" then
+    Return "Yes"
+
+Else if outlook = "Rain" then
+    Return "Yes"
+
+
 
 
 
