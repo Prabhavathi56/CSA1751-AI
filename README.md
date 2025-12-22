@@ -69,5 +69,36 @@ final_output  ← Sigmoid(final_input)
 
 return final_output
 
+Algorithm WaterJugPath(jug1, jug2, target)
+
+Initialize VISITED as empty set
+Initialize QUEUE with (0, 0, path = [(0, 0)])
+
+While QUEUE is not empty do
+    (a, b, path) ← Dequeue from QUEUE
+
+    If (a, b) is in VISITED then
+        Continue
+    Add (a, b) to VISITED
+
+    If a = target OR b = target then
+        Return path
+
+    Enqueue (a, jug2) with updated path        // Fill jug2
+    Enqueue (jug1, b) with updated path        // Fill jug1
+    Enqueue (0, b) with updated path           // Empty jug1
+    Enqueue (a, 0) with updated path           // Empty jug2
+
+    pour ← min(a, jug2 − b)
+    Enqueue (a − pour, b + pour)               // Pour jug1 → jug2
+
+    pour ← min(jug1 − a, b)
+    Enqueue (a + pour, b − pour)               // Pour jug2 → jug1
+
+End While
+
+Return NULL
+
+
 
 
