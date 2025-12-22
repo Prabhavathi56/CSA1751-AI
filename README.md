@@ -99,6 +99,32 @@ End While
 
 Return NULL
 
+Initialize board b with 9 empty spaces
+
+Function ShowBoard():
+    Print b[0] | b[1] | b[2]
+    Print --+---+--
+    Print b[3] | b[4] | b[5]
+    Print --+---+--
+    Print b[6] | b[7] | b[8]
+
+Function CheckWin(player):
+    Return TRUE if any row, column, or diagonal has all positions equal to player
+
+For i from 0 to 8:
+    ShowBoard()
+    player ← 'X' if i is even else 'O'
+    pos ← Input position from player
+    b[pos] ← player
+    If CheckWin(player) is TRUE:
+        ShowBoard()
+        Print "Player player wins!"
+        Break loop
+Else:
+    ShowBoard()
+    Print "Draw!"
+
+
 
 
 
