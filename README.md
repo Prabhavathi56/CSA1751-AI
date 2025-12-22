@@ -155,6 +155,24 @@ While PQ is not empty do
             Push (cost + weight, neighbor, path + [neighbor]) into PQ
 
 Return None, ∞
+Algorithm GBFS(graph, heuristic, start, goal)
+
+Initialize VISITED as empty set
+Initialize priority queue PQ and push (heuristic[start], start, [start])
+
+While PQ is not empty do
+    Pop (h, node, path) with lowest heuristic from PQ
+    If node is in VISITED then
+        Continue
+    Add node to VISITED
+    If node = goal then
+        Return path
+    For each neighbor, cost of node do
+        If neighbor not in VISITED then
+            Push (heuristic[neighbor], neighbor, path + [neighbor]) into PQ
+
+Return None
+
 
 
 
