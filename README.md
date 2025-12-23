@@ -186,6 +186,32 @@ For S from 1 to 9 do
                 Return
 Print "No solution found"
 
+Algorithm: MINIMAX(depth, node, isMax, values)
+
+Input:
+    depth   → depth of the game tree
+    node    → index of current node
+    isMax   → boolean (True if maximizing player, False if minimizing player)
+    values  → array of leaf node values
+
+Output:
+    Optimal minimax value for the current node
+
+Begin
+    If depth == 0 then
+        return values[node]
+    End If
+
+    If isMax == True then
+        bestValue ← -∞
+        leftValue  ← MINIMAX(depth - 1, node * 2, False, values)
+        rightValue ← MINIMAX(depth - 1, node * 2 + 1, False, values)
+        bestValue ← max(leftValue, rightValue)
+        return bestValue
+    Else
+        bestValue ← +∞
+        leftVa
+
 
 
 
