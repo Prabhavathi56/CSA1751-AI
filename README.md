@@ -211,6 +211,31 @@ Begin
     Else
         bestValue ← +∞
         leftVa
+Algorithm: Single Step Training of Neural Network
+
+  Initialize inputs, target, learning rate
+  Initialize weights and biases
+
+  Forward Pass:
+   h1 = sigmoid(x1*w1 + x2*w2 + b1)
+   h2 = sigmoid(x2*w3 + x3*w4 + b2)
+   output = sigmoid(h1*w5 + h2*w6 + b3)
+
+  Compute error:
+   error = target − output
+
+  Backpropagation:
+   delta_o = error * sigmoid_derivative(output)
+   delta_h1 = delta_o * w5 * sigmoid_derivative(h1)
+   delta_h2 = delta_o * w6 * sigmoid_derivative(h2)
+
+  Update weights and biases:
+   w5, w6, b3 updated using delta_o
+   w1, w2, b1 updated using delta_h1
+   w3, w4, b2 updated using delta_h2
+
+  End
+
 
 
 
